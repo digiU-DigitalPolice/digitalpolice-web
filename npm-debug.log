@@ -1,0 +1,288 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'install', '-g', 'jake' ]
+2 info using npm@1.4.29
+3 info using node@v0.10.42
+4 verbose node symlink /usr/bin/node
+5 warn deprecated This version of npm lacks support for important features,
+6 warn deprecated such as scoped packages, offered by the primary npm
+7 warn deprecated registry. Consider upgrading to at least npm@2, if not the
+8 warn deprecated latest stable version. To upgrade to npm@2, run:
+9 warn deprecated npm -g install npm@latest-2
+10 warn deprecated To upgrade to the latest stable version, run:
+11 warn deprecated npm -g install npm@latest
+12 warn deprecated (Depending on how Node.js was installed on your system, you
+13 warn deprecated may need to prefix the preceding commands with `sudo`, or if
+14 warn deprecated on Windows, run them from an Administrator prompt.)
+15 warn deprecated If you're running the version of npm bundled with
+16 warn deprecated Node.js 0.10 LTS, be aware that the next version of 0.10 LTS
+17 warn deprecated will be bundled with a version of npm@2, which has some small
+18 warn deprecated backwards-incompatible changes made to `npm run-script` and
+19 warn deprecated semver behavior.
+20 verbose cache add [ 'jake', null ]
+21 verbose cache add name=undefined spec="jake" args=["jake",null]
+22 verbose parsed url { protocol: null,
+22 verbose parsed url   slashes: null,
+22 verbose parsed url   auth: null,
+22 verbose parsed url   host: null,
+22 verbose parsed url   port: null,
+22 verbose parsed url   hostname: null,
+22 verbose parsed url   hash: null,
+22 verbose parsed url   search: null,
+22 verbose parsed url   query: null,
+22 verbose parsed url   pathname: 'jake',
+22 verbose parsed url   path: 'jake',
+22 verbose parsed url   href: 'jake' }
+23 silly lockFile c8d99c2f-jake jake
+24 verbose lock jake /home/iovzt/.npm/c8d99c2f-jake.lock
+25 silly lockFile c8d99c2f-jake jake
+26 silly lockFile c8d99c2f-jake jake
+27 verbose addNamed [ 'jake', '' ]
+28 verbose addNamed [ null, '*' ]
+29 silly lockFile 407019af-jake jake@
+30 verbose lock jake@ /home/iovzt/.npm/407019af-jake.lock
+31 silly addNameRange { name: 'jake', range: '*', hasData: false }
+32 verbose request where is /jake
+33 verbose request registry https://registry.npmjs.org/
+34 verbose request id fae31a46265eebe0
+35 verbose url raw /jake
+36 verbose url resolving [ 'https://registry.npmjs.org/', './jake' ]
+37 verbose url resolved https://registry.npmjs.org/jake
+38 verbose request where is https://registry.npmjs.org/jake
+39 info trying registry request attempt 1 at 12:40:29
+40 http GET https://registry.npmjs.org/jake
+41 http 200 https://registry.npmjs.org/jake
+42 silly registry.get cb [ 200,
+42 silly registry.get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+42 silly registry.get     etag: '"B03AU4EU98P31SDBJ4DJV3J1C"',
+42 silly registry.get     'content-type': 'application/json',
+42 silly registry.get     'cache-control': 'max-age=300',
+42 silly registry.get     'content-length': '107489',
+42 silly registry.get     'accept-ranges': 'bytes',
+42 silly registry.get     date: 'Sun, 21 Feb 2016 10:40:31 GMT',
+42 silly registry.get     via: '1.1 varnish',
+42 silly registry.get     age: '0',
+42 silly registry.get     connection: 'keep-alive',
+42 silly registry.get     'x-served-by': 'cache-sjc3123-SJC',
+42 silly registry.get     'x-cache': 'MISS',
+42 silly registry.get     'x-cache-hits': '0',
+42 silly registry.get     'x-timer': 'S1456051231.187309,VS0,VE338',
+42 silly registry.get     vary: 'Accept' } ]
+43 silly addNameRange number 2 { name: 'jake', range: '*', hasData: true }
+44 silly addNameRange versions [ 'jake',
+44 silly addNameRange   [ '0.1.0',
+44 silly addNameRange     '0.1.2',
+44 silly addNameRange     '0.1.3',
+44 silly addNameRange     '0.1.4',
+44 silly addNameRange     '0.1.5',
+44 silly addNameRange     '0.1.6',
+44 silly addNameRange     '0.1.7',
+44 silly addNameRange     '0.1.8',
+44 silly addNameRange     '0.1.9',
+44 silly addNameRange     '0.1.10',
+44 silly addNameRange     '0.1.11',
+44 silly addNameRange     '0.1.12',
+44 silly addNameRange     '0.1.13',
+44 silly addNameRange     '0.1.14',
+44 silly addNameRange     '0.1.16',
+44 silly addNameRange     '0.1.17',
+44 silly addNameRange     '0.1.18',
+44 silly addNameRange     '0.1.19',
+44 silly addNameRange     '0.1.20',
+44 silly addNameRange     '0.1.21',
+44 silly addNameRange     '0.1.22',
+44 silly addNameRange     '0.2.2',
+44 silly addNameRange     '0.2.3',
+44 silly addNameRange     '0.2.6',
+44 silly addNameRange     '0.2.7',
+44 silly addNameRange     '0.2.8',
+44 silly addNameRange     '0.2.9',
+44 silly addNameRange     '0.2.10',
+44 silly addNameRange     '0.2.11',
+44 silly addNameRange     '0.2.12',
+44 silly addNameRange     '0.2.15',
+44 silly addNameRange     '0.2.18',
+44 silly addNameRange     '0.2.19',
+44 silly addNameRange     '0.2.20',
+44 silly addNameRange     '0.2.21',
+44 silly addNameRange     '0.2.22',
+44 silly addNameRange     '0.2.23',
+44 silly addNameRange     '0.2.24',
+44 silly addNameRange     '0.2.25',
+44 silly addNameRange     '0.2.27',
+44 silly addNameRange     '0.2.28',
+44 silly addNameRange     '0.2.29',
+44 silly addNameRange     '0.2.30',
+44 silly addNameRange     '0.2.31',
+44 silly addNameRange     '0.2.32',
+44 silly addNameRange     '0.2.33',
+44 silly addNameRange     '0.2.35',
+44 silly addNameRange     '0.3.1',
+44 silly addNameRange     '0.3.2',
+44 silly addNameRange     '0.3.3',
+44 silly addNameRange     '0.3.4',
+44 silly addNameRange     '0.3.5',
+44 silly addNameRange     '0.3.6',
+44 silly addNameRange     '0.3.7',
+44 silly addNameRange     '0.3.8',
+44 silly addNameRange     '0.3.9',
+44 silly addNameRange     '0.3.10',
+44 silly addNameRange     '0.3.11',
+44 silly addNameRange     '0.3.12',
+44 silly addNameRange     '0.3.13',
+44 silly addNameRange     '0.3.14',
+44 silly addNameRange     '0.3.15',
+44 silly addNameRange     '0.3.16',
+44 silly addNameRange     '0.3.17',
+44 silly addNameRange     '0.4.1',
+44 silly addNameRange     '0.4.2',
+44 silly addNameRange     '0.5.1',
+44 silly addNameRange     '0.5.2',
+44 silly addNameRange     '0.5.3',
+44 silly addNameRange     '0.5.4',
+44 silly addNameRange     '0.5.5',
+44 silly addNameRange     '0.5.6',
+44 silly addNameRange     '0.5.7',
+44 silly addNameRange     '0.5.8',
+44 silly addNameRange     '0.5.9',
+44 silly addNameRange     '0.5.10',
+44 silly addNameRange     '0.5.11',
+44 silly addNameRange     '0.5.12',
+44 silly addNameRange     '0.5.13',
+44 silly addNameRange     '0.5.14',
+44 silly addNameRange     '0.5.15',
+44 silly addNameRange     '0.5.16',
+44 silly addNameRange     '0.5.17',
+44 silly addNameRange     '0.5.18',
+44 silly addNameRange     '0.6.1',
+44 silly addNameRange     '0.6.3',
+44 silly addNameRange     '0.6.4',
+44 silly addNameRange     '0.6.5',
+44 silly addNameRange     '0.6.6',
+44 silly addNameRange     '0.6.7',
+44 silly addNameRange     '0.6.8',
+44 silly addNameRange     '0.6.9',
+44 silly addNameRange     '0.6.10',
+44 silly addNameRange     '0.6.11',
+44 silly addNameRange     '0.6.12',
+44 silly addNameRange     '0.7.1',
+44 silly addNameRange     '0.7.2',
+44 silly addNameRange     '0.7.3',
+44 silly addNameRange     '0.7.4',
+44 silly addNameRange     '0.7.5',
+44 silly addNameRange     '0.7.6',
+44 silly addNameRange     '0.7.7',
+44 silly addNameRange     '0.7.8',
+44 silly addNameRange     '0.7.9',
+44 silly addNameRange     '0.7.10',
+44 silly addNameRange     '0.7.11',
+44 silly addNameRange     '0.7.12',
+44 silly addNameRange     '0.7.13',
+44 silly addNameRange     '0.7.14',
+44 silly addNameRange     '0.7.15',
+44 silly addNameRange     '0.7.16',
+44 silly addNameRange     '0.7.17',
+44 silly addNameRange     '0.7.18',
+44 silly addNameRange     '0.7.19',
+44 silly addNameRange     '0.7.20',
+44 silly addNameRange     '8.0.1',
+44 silly addNameRange     '8.0.2',
+44 silly addNameRange     '8.0.3',
+44 silly addNameRange     '8.0.4',
+44 silly addNameRange     '8.0.5',
+44 silly addNameRange     '8.0.6',
+44 silly addNameRange     '8.0.8',
+44 silly addNameRange     '8.0.9',
+44 silly addNameRange     '8.0.10',
+44 silly addNameRange     '8.0.11',
+44 silly addNameRange     '8.0.12' ] ]
+45 verbose addNamed [ 'jake', '8.0.12' ]
+46 verbose addNamed [ '8.0.12', '8.0.12' ]
+47 silly lockFile a0d93f71-jake-8-0-12 jake@8.0.12
+48 verbose lock jake@8.0.12 /home/iovzt/.npm/a0d93f71-jake-8-0-12.lock
+49 silly lockFile b6137fda-y-npmjs-org-jake-jake-8-0-12-tgz https://registry.npmjs.org/jake/-/jake-8.0.12.tgz
+50 verbose lock https://registry.npmjs.org/jake/-/jake-8.0.12.tgz /home/iovzt/.npm/b6137fda-y-npmjs-org-jake-jake-8-0-12-tgz.lock
+51 verbose addRemoteTarball [ 'https://registry.npmjs.org/jake/-/jake-8.0.12.tgz',
+51 verbose addRemoteTarball   '6074c542f6187eb647c3aee5621fee259c578edd' ]
+52 info retry fetch attempt 1 at 12:40:32
+53 verbose fetch to= /tmp/npm-4102-QAyBD6ge/registry.npmjs.org/jake/-/jake-8.0.12.tgz
+54 http GET https://registry.npmjs.org/jake/-/jake-8.0.12.tgz
+55 http 200 https://registry.npmjs.org/jake/-/jake-8.0.12.tgz
+56 silly lockFile b6137fda-y-npmjs-org-jake-jake-8-0-12-tgz https://registry.npmjs.org/jake/-/jake-8.0.12.tgz
+57 silly lockFile b6137fda-y-npmjs-org-jake-jake-8-0-12-tgz https://registry.npmjs.org/jake/-/jake-8.0.12.tgz
+58 silly lockFile a0d93f71-jake-8-0-12 jake@8.0.12
+59 silly lockFile a0d93f71-jake-8-0-12 jake@8.0.12
+60 silly lockFile 407019af-jake jake@
+61 silly lockFile 407019af-jake jake@
+62 silly resolved [ { name: 'jake',
+62 silly resolved     description: 'JavaScript build tool, similar to Make or Rake',
+62 silly resolved     keywords: [ 'build', 'cli', 'make', 'rake' ],
+62 silly resolved     version: '8.0.12',
+62 silly resolved     author:
+62 silly resolved      { name: 'Matthew Eernisse',
+62 silly resolved        email: 'mde@fleegix.org',
+62 silly resolved        url: 'http://fleegix.org' },
+62 silly resolved     bin: { jake: './bin/cli.js' },
+62 silly resolved     main: './lib/jake.js',
+62 silly resolved     repository: { type: 'git', url: 'git://github.com/mde/jake.git' },
+62 silly resolved     preferGlobal: true,
+62 silly resolved     dependencies:
+62 silly resolved      { filelist: '0.0.x',
+62 silly resolved        minimatch: '0.2.x',
+62 silly resolved        chalk: '0.4.x',
+62 silly resolved        utilities: '1.0.x',
+62 silly resolved        async: '0.9.x' },
+62 silly resolved     devDependencies: { q: '0.9.x' },
+62 silly resolved     engines: { node: '*' },
+62 silly resolved     bugs: { url: 'https://github.com/mde/jake/issues' },
+62 silly resolved     homepage: 'https://github.com/mde/jake',
+62 silly resolved     _id: 'jake@8.0.12',
+62 silly resolved     _shasum: '6074c542f6187eb647c3aee5621fee259c578edd',
+62 silly resolved     _resolved: 'https://registry.npmjs.org/jake/-/jake-8.0.12.tgz',
+62 silly resolved     _from: 'jake@',
+62 silly resolved     scripts: {},
+62 silly resolved     _npmVersion: '2.1.18',
+62 silly resolved     _nodeVersion: '0.10.35',
+62 silly resolved     _npmUser: { name: 'mde', email: 'mde@fleegix.org' },
+62 silly resolved     maintainers: [ [Object] ],
+62 silly resolved     dist:
+62 silly resolved      { shasum: '6074c542f6187eb647c3aee5621fee259c578edd',
+62 silly resolved        tarball: 'http://registry.npmjs.org/jake/-/jake-8.0.12.tgz' },
+62 silly resolved     directories: {} } ]
+63 info install jake@8.0.12 into /usr/lib
+64 info installOne jake@8.0.12
+65 verbose lib/node_modules/jake unbuild
+66 verbose tar unpack /home/iovzt/.npm/jake/8.0.12/package.tgz
+67 silly lockFile 1442101c-tar-usr-lib-node-modules-jake tar:///usr/lib/node_modules/jake
+68 verbose lock tar:///usr/lib/node_modules/jake /home/iovzt/.npm/1442101c-tar-usr-lib-node-modules-jake.lock
+69 silly lockFile 39fcf83a-ovzt-npm-jake-8-0-12-package-tgz tar:///home/iovzt/.npm/jake/8.0.12/package.tgz
+70 verbose lock tar:///home/iovzt/.npm/jake/8.0.12/package.tgz /home/iovzt/.npm/39fcf83a-ovzt-npm-jake-8-0-12-package-tgz.lock
+71 silly gunzTarPerm modes [ '775', '664' ]
+72 error Error: EACCES, mkdir '/usr/lib/node_modules/jake'
+72 error  { [Error: EACCES, mkdir '/usr/lib/node_modules/jake']
+72 error   errno: 3,
+72 error   code: 'EACCES',
+72 error   path: '/usr/lib/node_modules/jake',
+72 error   fstream_type: 'Directory',
+72 error   fstream_path: '/usr/lib/node_modules/jake',
+72 error   fstream_class: 'DirWriter',
+72 error   fstream_stack:
+72 error    [ '/usr/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23',
+72 error      '/usr/lib/node_modules/npm/node_modules/mkdirp/index.js:46:53',
+72 error      'Object.oncomplete (fs.js:108:15)' ] }
+73 error Please try running this command again as root/Administrator.
+74 error System Linux 3.19.0-49-generic
+75 error command "/usr/bin/node" "/usr/bin/npm" "install" "-g" "jake"
+76 error cwd /home/iovzt/Workspace/PHP/digitalpolice
+77 error node -v v0.10.42
+78 error npm -v 1.4.29
+79 error path /usr/lib/node_modules/jake
+80 error fstream_path /usr/lib/node_modules/jake
+81 error fstream_type Directory
+82 error fstream_class DirWriter
+83 error code EACCES
+84 error errno 3
+85 error stack Error: EACCES, mkdir '/usr/lib/node_modules/jake'
+86 error fstream_stack /usr/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23
+86 error fstream_stack /usr/lib/node_modules/npm/node_modules/mkdirp/index.js:46:53
+86 error fstream_stack Object.oncomplete (fs.js:108:15)
+87 verbose exit [ 3, true ]
