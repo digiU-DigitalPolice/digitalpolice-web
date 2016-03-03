@@ -3,6 +3,13 @@
     "version": "1.0.0",
     "keywords": ["util", "functional", "server", "client", "browser"],
     "author": "iovzt",
+    "repository": "https://github.com/DigitalUkraine/digitalpolice-frontend",
     "contributors": [],
+    "devDependencies": {
+      "http-server": "^0.6.1"
+    },
+    "scripts": {
+      "start": "http-server -a localhost -p 8000 -c-1"
+    },
     "dependencies": {}
 }
