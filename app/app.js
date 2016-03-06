@@ -6,8 +6,14 @@ angular.module('myApp', [
   'ngRoute',
   'myApp.services',
   'myApp.map',
-  'myApp.view2'
+  'myApp.view2',
+  'angular-loading-bar'
 ])
+
+.config(['cfpLoadingBarProvider', function(cfpLoadingBarProvider) {
+  cfpLoadingBarProvider.includeSpinner = false;
+}])
+
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/map'});

@@ -45,3 +45,8 @@ body > .wrapper > .page-content.toggle .map-wrapper {
 .sidebar-menu li .submenu label {
     color: #c6fff1;
 }
+
+#loading-bar .bar {
+  background: #ffffff;
+  height: 2px;
+}
