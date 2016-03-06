@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Digital police</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" media="screen">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+  <link rel="stylesheet" href="bower_components/leaflet/dist/leaflet.css" />
+  <link rel="stylesheet" href="sentir-assets/css/style.css" />
+  <link rel="stylesheet" href="bower_components/components-font-awesome/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <div class="wrapper">
+    <!-- BEGIN TOP NAV -->
+    <div class="top-navbar primary-color">
+        <div class="top-navbar-inner">
+            <!-- Begin Logo brand -->
+            <div class="logo-brand primary-color">
+                <a href="index.html">DigitalPolice</a>
+            </div><!-- /.logo-brand -->
+            <!-- End Logo brand -->
+            <div class="top-nav-content">
+                <!-- Begin button sidebar left toggle -->
+                <div class="btn-collapse-sidebar-left">
+                    <i class="fa fa-bars"></i>
+                </div><!-- /.btn-collapse-sidebar-left -->
+                <!-- End button sidebar left toggle -->
+                <!-- Begin button nav toggle -->
+                <div class="btn-collapse-nav" data-toggle="collapse" data-target="#main-fixed-nav">
+                    <i class="fa fa-plus icon-plus"></i>
+                </div><!-- /.btn-collapse-sidebar-right -->
+                <!-- End button nav toggle -->
+                <!-- Begin user session nav -->
+                <ul class="nav-user navbar-right">
+                    <li class="dropdown">
+                        <a href="#fakelink" class="dropdown-toggle" data-toggle="dropdown">
+                            Hi, <strong>Paris Hawker</strong>
+                        </a>
+                        <ul class="dropdown-menu square primary margin-list-rounded with-triangle">
+                            <li><a href="#fakelink">Account setting</a></li>
+                            <li><a href="#fakelink">Payment setting</a></li>
+                            <li><a href="#fakelink">Change password</a></li>
+                            <li><a href="#fakelink">My public profile</a></li>
+                            <li class="divider"></li>
+                            <li><a href="lock-screen.html">Lock screen</a></li>
+                            <li><a href="login.html">Log out</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- End user session nav -->
+                <!-- End Collapse menu nav -->
+            </div><!-- /.top-nav-content -->
+        </div><!-- /.top-navbar-inner -->
+    </div><!-- /.top-navbar -->
+    <!-- END TOP NAV -->
+    <!-- BEGIN SIDEBAR LEFT -->
+    <div class="sidebar-left sidebar-nicescroller primary-color">
+        <ul class="sidebar-menu">
+            <li>
+                <a href="index.html"><i class="fa fa-link icon-sidebar"></i>Link1</a>
+            </li>
+            <li>
+                <a href="index.html"><i class="fa fa-link icon-sidebar"></i>Link2</a>
+            </li>
+            <li>
+                <a href="index.html"><i class="fa fa-link icon-sidebar"></i>Link3</a>
+            </li>
+        </ul>
+    </div><!-- /.sidebar-left -->
+    <!-- BEGIN PAGE CONTENT -->
+    <div class="page-content">
+      <div ng-view></div>
+    </div><!-- /.page-content -->
+  </div><!-- /.wrapper -->
+  <!-- END PAGE CONTENT -->
+  <!-- MAIN JAVASRCIPT (REQUIRED ALL PAGE)-->
+  <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+  -->
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/leaflet/dist/leaflet.js"></script>
+  <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+  <script src="bower_components/jquery.nicescroll/jquery.nicescroll.min.js"></script>
+  <script src="bower_components/magnific-popup/dist/jquery.magnific-popup.min.js"></script>
+  <script src="bower_components/owl.carousel/dist/owl.carousel.min.js"></script>
+  <script src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+  <script src="bower_components/chosen/chosen.jquery.js"></script>
+  <script src="bower_components/jquery-mask-plugin/dist/jquery.mask.min.js"></script>
+
+  <script src="sentir-assets/js/apps.js"></script>
+  <script src="app.js"></script>
+  <script src="view1/view1.js"></script>
+  <script src="view2/view2.js"></script>
+  <script src="components/version/version.js"></script>
+  <script src="components/version/version-directive.js"></script>
+  <script src="components/version/interpolate-filter.js"></script>
+</body>
+</html>
