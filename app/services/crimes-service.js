@@ -6,7 +6,7 @@ angular.module('myApp.services')
 
   self.loadCrimes = function(callback){
     $http({
-      url: ENV.crimesUrl,
+      url: ENV.crimesUrl + '/crimes',
       method: "GET",
       params: {
         dateFrom: "2015/01/01",

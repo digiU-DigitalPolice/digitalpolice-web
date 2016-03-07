@@ -16,7 +16,7 @@ module.exports = function(grunt) {
         constants: {
           ENV: {
             name: 'development',
-            crimesUrl: 'http://localhost:8080/map'
+            crimesUrl: 'http://localhost:8080'
           }
         }
       },
@@ -27,7 +27,7 @@ module.exports = function(grunt) {
         constants: {
           ENV: {
             name: 'production',
-            crimesUrl: 'http://162.211.230.155:8080/map'
+            crimesUrl: 'http://162.211.230.155:8080'
           }
         }
       }
