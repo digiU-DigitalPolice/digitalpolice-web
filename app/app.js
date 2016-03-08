@@ -7,7 +7,8 @@ angular.module('myApp', [
   'myApp.services',
   'myApp.map',
   'myApp.view2',
-  'angular-loading-bar'
+  'angular-loading-bar',
+  'myApp.directives'
 ])
 
 .config(['cfpLoadingBarProvider', function(cfpLoadingBarProvider) {
