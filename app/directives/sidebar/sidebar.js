@@ -13,8 +13,8 @@ angular.module('myApp.directives', [])
 	};
 })
 
-.controller('SidebarCtrl', ['$scope', '$http', 'ENV', 'CrimesService', 'CategoriesService',
-function($scope, $http, ENV, CrimesService, CategoriesService) {
+.controller('SidebarCtrl', ['$scope', '$http', 'ENV', 'CrimesService', 'CategoriesService', 'RegionsService',
+function($scope, $http, ENV, CrimesService, CategoriesService, RegionsService) {
 
 		$scope.categories = {};
 
@@ -24,20 +24,35 @@ function($scope, $http, ENV, CrimesService, CategoriesService) {
 		CategoriesService.loadCategories(function(data){
 			$scope.categories = data;
 		});
+	
+		RegionsService.loadRegions(function(data){
+			$scope.regions = data;
+		});
 
-		$scope.$watch('categories', function (newObj, oldObj) {
+		$scope.$watch('[categories,regions]', function (newObj, oldObj) {
 			$scope.reloadCrimesData();
 		}, true);
 
 		$scope.reloadCrimesData = function() {
 			var categoryIds = filterOutSelectedCategoryIds($scope.categories);
+			var regionIds = filterOutSelectedRegionIds($scope.regions);
 			var dateFrom = +$scope.dateFrom;
 			var dateTo = +$scope.dateTo;
-			if(categoryIds.length == 0){
-				categoryIds = [0]; //TODO: This is a workaround
+			var params = {
+				dateFrom: dateFrom,
+				dateTo: dateTo
+			};
+			if(categoryIds.length > 0){
+				params.categories = categoryIds;
+			} else {
+				params.categories = [0];
 			}
-			CrimesService.renderCrimes(categoryIds, dateFrom, dateTo);
-		}
+			if (regionIds.length > 0) {
+				params.regions = regionIds;
+			}
+
+			CrimesService.renderCrimes(params);
+		};
 
 		function filterOutSelectedCategoryIds(categories){
 			var result = [];
@@ -48,4 +63,15 @@ function($scope, $http, ENV, CrimesService, CategoriesService) {
 			}
 			return result;
 		}
+
+		function filterOutSelectedRegionIds(regions){
+			var result = [];
+			for (var i = 0; i < regions.length; i++) {
+				if(regions[i].selected){
+					result.push(regions[i].region.KOATU);
+				}
+			}
+			return result;
+		}
+
 }]);
