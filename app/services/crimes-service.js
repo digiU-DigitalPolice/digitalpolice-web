@@ -21,13 +21,13 @@ angular.module('myApp.services')
     return map;
   };
 
-  self.renderCrimes = function(categories){
+  self.renderCrimes = function(categories, dateFrom, dateTo){
     $http({
       url: ENV.apiURL + '/crimes',
       method: 'GET',
       params: {
-        dateFrom: '2015/01/01',
-        dateTo: '2015/12/31',
+        dateFrom: dateFrom,
+        dateTo: dateTo,
         categories: categories
       }
     }).

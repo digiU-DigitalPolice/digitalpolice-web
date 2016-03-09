@@ -1,4 +1,12 @@
 <div class="sidebar-left sidebar-nicescroller primary-color">
+    <ul>
+        <li>
+            <label for="date-from>">From:</label>
+            <input type="date" ui-date ui-date-format="yyyy/MM/dd" id="date-from>" ng.model="dateFrom" value="{{ dateFrom | date:'yyyy-MM-dd' }}">
+            <label for="date-to">To:</label>
+            <input type="date" ui-date ui-date-format="yyyy/MM/dd" id="date-to" ng.model="dateTo" value="{{ dateTo | date:'yyyy-MM-dd' }}">
+        </li>
+    </ul>
     <ul ng-repeat="category in categories">
       <li>
         <label>

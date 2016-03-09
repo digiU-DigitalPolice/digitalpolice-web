@@ -18,16 +18,21 @@ function($scope, $http, ENV, CrimesService, CategoriesService) {
 
 		$scope.categories = {};
 
+		$scope.dateFrom = new Date("2014/01/01");
+		$scope.dateTo = new Date("2017/01/01");
+
 		CategoriesService.loadCategories(function(data){
 			$scope.categories = data;
 		});
 
 		$scope.$watch('categories', function (newObj, oldObj) {
 			var categoryIds = filterOutSelectedCategoryIds($scope.categories);
+			var dateFrom = +$scope.dateFrom;
+			var dateTo = +$scope.dateTo;
 			if(categoryIds.length == 0){
 				categoryIds = [0]; //TODO: This is a workaround
 			}
-			CrimesService.renderCrimes(categoryIds);
+			CrimesService.renderCrimes(categoryIds, dateFrom, dateTo);
 		}, true);
 
 		function filterOutSelectedCategoryIds(categories){
