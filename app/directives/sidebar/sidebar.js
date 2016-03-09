@@ -26,6 +26,10 @@ function($scope, $http, ENV, CrimesService, CategoriesService) {
 		});
 
 		$scope.$watch('categories', function (newObj, oldObj) {
+			$scope.reloadCrimesData();
+		}, true);
+
+		$scope.reloadCrimesData = function() {
 			var categoryIds = filterOutSelectedCategoryIds($scope.categories);
 			var dateFrom = +$scope.dateFrom;
 			var dateTo = +$scope.dateTo;
@@ -33,7 +37,7 @@ function($scope, $http, ENV, CrimesService, CategoriesService) {
 				categoryIds = [0]; //TODO: This is a workaround
 			}
 			CrimesService.renderCrimes(categoryIds, dateFrom, dateTo);
-		}, true);
+		}
 
 		function filterOutSelectedCategoryIds(categories){
 			var result = [];
