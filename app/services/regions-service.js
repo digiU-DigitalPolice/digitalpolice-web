@@ -6,7 +6,7 @@ angular.module('myApp.services')
 
   self.loadRegions = function(callback){
     $http.get(ENV.apiURL + '/regions').then(function(res){
-      callback(res.data.regions);
+      callback(res.data);
     });
   };
 

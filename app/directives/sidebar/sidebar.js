@@ -68,7 +68,7 @@ function($scope, $http, ENV, CrimesService, CategoriesService, RegionsService) {
 			var result = [];
 			for (var i = 0; i < regions.length; i++) {
 				if(regions[i].selected){
-					result.push(regions[i].region.KOATU);
+					result.push(regions[i].koatuu);
 				}
 			}
 			return result;
