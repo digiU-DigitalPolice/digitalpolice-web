@@ -8,15 +8,15 @@
         </li>
     </ul>
     <span>Райони:</span>
-    <ul ng-repeat="region in regions">
-        <li>
+    <ul>
+        <li ng-repeat="region in regions">
             <label>
                 <input type="checkbox" ng-model="region.selected"/>{{ region.name }}</label>
         </li>
     </ul>
     <span>Категорії</span>
-    <ul ng-repeat="category in categories">
-      <li>
+    <ul>
+      <li ng-repeat="category in categories">
         <label>
           <input type="checkbox" ng-model="category.selected"/>{{ category.title }}</label>
       </li>
