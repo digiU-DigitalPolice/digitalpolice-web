@@ -21,7 +21,22 @@ angular.module('myApp.services')
     return map;
   };
 
+  self.onEachFeature = function(feature, layer) {
+      if (feature.properties) {
+          layer.bindPopup("count: " + feature.properties.count);
+      }
+  };
+
   self.renderCrimes = function(params){
+
+    var bounds = self.map.getBounds();
+
+    params['southWest.latitude'] = bounds._southWest.lat,
+    params['southWest.longitude'] = bounds._southWest.lng,
+    params['northEast.latitude'] = bounds._northEast.lat,
+    params['northEast.longitude'] = bounds._northEast.lng,
+    params['precision'] = self.map.getZoom() - 7;
+
     $http({
       url: ENV.apiURL + '/crimes',
       method: 'GET',
@@ -33,7 +48,9 @@ angular.module('myApp.services')
           self.map.removeLayer(layer);
         }
       });
-      L.geoJson(data).addTo(self.map);
+      L.geoJson(data, {
+          onEachFeature: self.onEachFeature
+      }).addTo(self.map);
     });
   };
 
