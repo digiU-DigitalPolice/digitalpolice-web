@@ -1,19 +1,19 @@
-# digitalpolice-frontend
+# digitalpolice-web
 
 Frontend // HTML5 + CSS3 + JS + other
 
 
 ## Getting Started
 
-To get you started you can simply clone the digitalpolice-frontend repository and install the dependencies:
+To get you started you can simply clone the digitalpolice-web repository and install the dependencies:
 
-### Clone digitalpolice-frontend
+### Clone digitalpolice-web
 
-Clone the digitalpolice-frontend repository using [git][git]:
+Clone the digitalpolice-web repository using [git][git]:
 
 ```
-git clone https://github.com/DigitalUkraine/digitalpolice-frontend.git
-cd digitalpolice-frontend
+git clone https://github.com/digiU-DigitalPolice/digitalpolice-web.git
+cd digitalpolice-web
 ```
 
 ### Install Dependencies
@@ -37,7 +37,7 @@ folders in your project.
 * `app/bower_components` - contains the angular framework files
 
 *Note that the `bower_components` folder would normally be installed in the root folder but
-digitalpolice-frontend changes this location through the `.bowerrc` file.  Putting it in the app folder makes
+digitalpolice-web changes this location through the `.bowerrc` file.  Putting it in the app folder makes
 it easier to serve the files by a webserver.*
 
 ### Run the Application
