@@ -66,7 +66,7 @@ $(document).ready(function(){
 	/** END BUTTON TOGGLE FUNCTION **/
 	
 	
-	/** BEGIN PREETY PRINT **/
+	/** BEGIN leaflet-marker-paneREETY PRINT **/
 	$(window).load(function() {
     "use strict";
 	prettyPrint()})
