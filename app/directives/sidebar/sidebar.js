@@ -1,7 +1,6 @@
 'use strict';
 
 /* Directives */
-
 angular.module('myApp.directives', [])
 
     .directive('sidebar', function () {
@@ -28,12 +27,10 @@ angular.module('myApp.directives', [])
             RegionsService.loadRegions(function (data) {
                 $scope.regions = data;
             });
-
             $scope.$watch('[categories,regions]', function (newObj, oldObj) {
                 $scope.reloadCrimesData();
                 $scope.changeZoom();
             }, true);
-
             $scope.reloadCrimesData = function () {
                 var categoryIds = filterOutSelectedCategoryIds($scope.categories);
                 var regionIds = filterOutSelectedRegionIds($scope.regions);
@@ -56,17 +53,9 @@ angular.module('myApp.directives', [])
             };
             /*change zoom & update map*/
             $scope.changeZoom = function () {
-                console.log('test1');
 
-                CrimesService.map.on('zoomend', function(e){
-                    var dateFrom = +$scope.dateFrom;
-                    var dateTo = +$scope.dateTo;
-                    var params = {
-                        dateFrom: dateFrom,
-                        dateTo: dateTo
-                    };
-                    console.log('test2');
-                    CrimesService.renderCrimes(params);
+                CrimesService.map.on('zoomend', function (e) {
+                    $scope.reloadCrimesData();
                 });
 
             };

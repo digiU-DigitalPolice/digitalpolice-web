@@ -1,25 +1,31 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<!--[if lt IE 7]>
+<html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Digital police</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" media="screen">
-  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
-  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
-  <link rel="stylesheet" href="bower_components/leaflet/dist/leaflet.css" />
-  <link rel="stylesheet" href="sentir-assets/css/style.css" />
-  <link rel="stylesheet" href="bower_components/components-font-awesome/css/font-awesome.min.css" />
-  <link rel='stylesheet' href='bower_components/angular-loading-bar/build/loading-bar.min.css' type='text/css' media='all' />
-  <link rel="stylesheet" href="app.css">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Digital police</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" media="screen">
+    <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+    <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+    <link rel="stylesheet" href="bower_components/leaflet/dist/leaflet.css"/>
+    <link rel="stylesheet" href="sentir-assets/css/style.css"/>
+    <link rel="stylesheet" href="bower_components/components-font-awesome/css/font-awesome.min.css"/>
+    <link rel='stylesheet' href='bower_components/angular-loading-bar/build/loading-bar.min.css' type='text/css'
+          media='all'/>
+    <link rel="stylesheet" href="app.css">
 </head>
 <body>
-  <div class="wrapper">
+<div class="wrapper">
     <!-- BEGIN TOP NAV -->
     <div class="top-navbar primary-color">
         <div class="top-navbar-inner">
@@ -67,40 +73,40 @@
     <!-- /.sidebar-left -->
     <!-- BEGIN PAGE CONTENT -->
     <div class="page-content">
-      <div ng-view></div>
+        <div ng-view></div>
     </div><!-- /.page-content -->
-  </div><!-- /.wrapper -->
-  <!-- END PAGE CONTENT -->
-  <!-- MAIN JAVASRCIPT (REQUIRED ALL PAGE)-->
-  <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-  <![endif]-->
+</div><!-- /.wrapper -->
+<!-- END PAGE CONTENT -->
+<!-- MAIN JAVASRCIPT (REQUIRED ALL PAGE)-->
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
 
-  <!-- In production use:
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
-  -->
-  <script src="bower_components/jquery/dist/jquery.min.js"></script>
-  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-  <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/angular-route/angular-route.js"></script>
-  <script src="bower_components/leaflet/dist/leaflet.js"></script>
-  <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
-  <script src="bower_components/jquery.nicescroll/jquery.nicescroll.min.js"></script>
-  <script src="bower_components/magnific-popup/dist/jquery.magnific-popup.min.js"></script>
-  <script src="bower_components/owl.carousel/dist/owl.carousel.min.js"></script>
-  <script src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-  <script src="bower_components/chosen/chosen.jquery.js"></script>
-  <script src="bower_components/jquery-mask-plugin/dist/jquery.mask.min.js"></script>
-  <script src='bower_components/angular-loading-bar/build/loading-bar.min.js'></script>
+<!-- In production use:
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+-->
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/leaflet/dist/leaflet.js"></script>
+<script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+<script src="bower_components/jquery.nicescroll/jquery.nicescroll.min.js"></script>
+<script src="bower_components/magnific-popup/dist/jquery.magnific-popup.min.js"></script>
+<script src="bower_components/owl.carousel/dist/owl.carousel.min.js"></script>
+<script src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<script src="bower_components/chosen/chosen.jquery.js"></script>
+<script src="bower_components/jquery-mask-plugin/dist/jquery.mask.min.js"></script>
+<script src='bower_components/angular-loading-bar/build/loading-bar.min.js'></script>
 
-  <script src="sentir-assets/js/apps.js"></script>
-  <script src="app.js"></script>
-  <script src="controllers/map/map.js"></script>
-  <script src="controllers/view2/view2.js"></script>
-  <script src="services/crimes-service.js"></script>
-  <script src="services/categories-service.js"></script>
-  <script src="services/regions-service.js"></script>
-  <script src="config.js"></script>
-  <script src="directives/sidebar/sidebar.js"></script>
+<script src="sentir-assets/js/apps.js"></script>
+<script src="app.js"></script>
+<script src="controllers/map/map.js"></script>
+<script src="controllers/view2/view2.js"></script>
+<script src="services/crimes-service.js"></script>
+<script src="services/categories-service.js"></script>
+<script src="services/regions-service.js"></script>
+<script src="config.js"></script>
+<script src="directives/sidebar/sidebar.js"></script>
 </body>
 </html>
