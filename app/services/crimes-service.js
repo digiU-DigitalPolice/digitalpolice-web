@@ -36,7 +36,7 @@ angular.module('myApp.services')
                 params['northEast.latitude'] = bounds._northEast.lat,
                 params['northEast.longitude'] = bounds._northEast.lng,
                 params['precision'] = self.map.getZoom() - 7;
-
+            console.log('catch');
             $http({
                 url: ENV.apiURL + '/crimes',
                 method: 'GET',
@@ -53,5 +53,4 @@ angular.module('myApp.services')
                 }).addTo(self.map);
             });
         };
-
     }]);
