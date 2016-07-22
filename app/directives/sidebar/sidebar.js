@@ -53,7 +53,6 @@ angular.module('myApp.directives', [])
             };
             /*change zoom & update map*/
             $scope.changeZoom = function () {
-
                 CrimesService.map.on('zoomend', function (e) {
                     $scope.reloadCrimesData();
                 });
