@@ -31,6 +31,7 @@ angular.module('myApp.directives', [])
                 $scope.reloadCrimesData();
                 $scope.changeZoom();
             }, true);
+
             $scope.reloadCrimesData = function () {
                 var categoryIds = filterOutSelectedCategoryIds($scope.categories);
                 var regionIds = filterOutSelectedRegionIds($scope.regions);

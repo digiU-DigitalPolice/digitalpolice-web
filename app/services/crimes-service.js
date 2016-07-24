@@ -18,6 +18,9 @@ angular.module('myApp.services')
             // start the map in South-East England
             self.map.setView([49.8327786, 23.9420238], 11);
             self.map.addLayer(self.osmLayer);
+            self.map.on('zoomend', function (e) {
+                $scope.reloadCrimesData();
+            });
             return map;
         };
 
