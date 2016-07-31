@@ -36,6 +36,10 @@ angular.module('myApp.services')
           var c =  L.marker(new L.LatLng(feature.geometry.coordinates[1], feature.geometry.coordinates[0]),
             {icon: iconCreateFunction(feature)});
 
+          c.on('click', function(e){
+              self.map.setView([e.latlng.lat, e.latlng.lng], self.map.getZoom() + 1);
+          });
+
           markers.addLayer(c);
       }
 
