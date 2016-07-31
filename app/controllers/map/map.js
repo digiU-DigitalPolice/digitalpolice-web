@@ -17,4 +17,8 @@ angular.module('myApp.map', ['ngRoute'])
       CrimesService.loadCrimes();
   });
 
+  MapService.map.on('moveend', function (e) {
+      CrimesService.loadCrimes();
+  });
+
 }]);

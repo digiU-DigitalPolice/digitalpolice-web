@@ -27,15 +27,38 @@ angular.module('myApp.services')
               self.map.removeLayer(layer);
           }
       });
-      L.geoJson(geoJSON, {
-          onEachFeature: self.onEachFeature
-      }).addTo(self.map);
+
+      var markers = L.layerGroup();
+
+      for (var i = 0; i < geoJSON.features.length; ++i) {
+          var feature = geoJSON.features[i];
+
+          var c =  L.marker(new L.LatLng(feature.geometry.coordinates[1], feature.geometry.coordinates[0]),
+            {icon: iconCreateFunction(feature)});
+
+          markers.addLayer(c);
+      }
+
+      self.map.addLayer(markers);
   };
 
-  self.onEachFeature = function (feature, layer) {
-      if (feature.properties) {
-          layer.bindPopup("count: " + feature.properties.count);
-      }
+  var iconCreateFunction = function (feature) {
+      var childCount = feature.properties.count;
+
+      var c = ' marker-cluster-';
+      if (childCount < 10) {
+  	     c += 'small';
+  		} else if (childCount < 100) {
+  		    c += 'medium';
+  		} else {
+  		    c += 'large';
+  		}
+
+  		return new L.DivIcon({
+          html: '<div><span><b>' + childCount + '</b></span></div>',
+          className: 'marker-cluster' + c,
+          iconSize: new L.Point(40, 40)
+      });
   };
 
 }]);
