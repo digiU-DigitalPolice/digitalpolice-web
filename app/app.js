@@ -6,6 +6,7 @@ angular.module('myApp', [
   'ngRoute',
   'myApp.services',
   'myApp.map',
+  'myApp.view2',
   'angular-loading-bar',
   'myApp.directives'
 ])

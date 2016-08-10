@@ -16,6 +16,7 @@ angular.module('myApp.directives', [])
         function ($scope, $http, ENV, CrimesService, CategoriesService, RegionsService) {
 
             $scope.categories = {};
+
             $scope.dateFrom = new Date("2014/01/01");
             $scope.dateTo = new Date("2017/01/01");
 
@@ -26,39 +27,37 @@ angular.module('myApp.directives', [])
             RegionsService.loadRegions(function (data) {
                 $scope.regions = data;
             });
+            $scope.$watch('[categories,regions]', function (newObj, oldObj) {
+                $scope.reloadCrimesData();
+                $scope.changeZoom();
+            }, true);
 
-            $scope.$watch('[categories]', function (newObj, oldObj) {
-                if (newObj === oldObj) {
-                  return;
-                }
+            $scope.reloadCrimesData = function () {
                 var categoryIds = filterOutSelectedCategoryIds($scope.categories);
-                CrimesService.setCategoryIds(categoryIds);
-
-                CrimesService.loadCrimes();
-            }, true);
-
-            $scope.$watch('[regions]', function (newObj, oldObj) {
-                if (newObj === oldObj) {
-                  return;
-                }
                 var regionIds = filterOutSelectedRegionIds($scope.regions);
-                CrimesService.setRegionIds(regionIds);
-
-                CrimesService.loadCrimes();
-            }, true);
-
-            $scope.dateFromChanged = function () {
                 var dateFrom = +$scope.dateFrom;
-                CrimesService.setDateFrom(dateFrom);
-
-                CrimesService.loadCrimes();
-            };
-
-            $scope.dateToChanged = function () {
                 var dateTo = +$scope.dateTo;
-                CrimesService.setDateTo(dateTo);
+                var params = {
+                    dateFrom: dateFrom,
+                    dateTo: dateTo
+                };
+                if (categoryIds.length > 0) {
+                    params.categories = categoryIds;
+                } else {
+                    params.categories = [0];
+                }
+                if (regionIds.length > 0) {
+                    params.regions = regionIds;
+                }
 
-                CrimesService.loadCrimes();
+                CrimesService.renderCrimes(params);
+            };
+            /*change zoom & update map*/
+            $scope.changeZoom = function () {
+                CrimesService.map.on('zoomend', function (e) {
+                    $scope.reloadCrimesData();
+                });
+
             };
 
             function filterOutSelectedCategoryIds(categories) {
