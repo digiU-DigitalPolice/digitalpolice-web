@@ -1,12 +1,12 @@
 <div class="sidebar-left sidebar-nicescroller primary-color">
-    <ul>
-        <li>
-            <label for="date-from">From:</label>
-            <input type="date" ui-date ui-date-format="dd/MM/yyyy" id="date-from" ng-model="dateFrom" ng-change="reloadCrimesData()">
-            <label for="date-to">To:</label>
-            <input type="date" ui-date ui-date-format="dd/MM/yyyy" id="date-to" ng-model="dateTo" ng-change="reloadCrimesData()">
-        </li>
-    </ul>
+    <div>
+        <label for="date-from">From:</label>
+        <input type="date" ui-date ui-date-format="dd/MM/yyyy" id="date-from" ng-model="dateFrom" ng-change="dateFromChanged()">
+    </div>
+    <div>
+        <label for="date-to">To:</label>
+        <input type="date" ui-date ui-date-format="dd/MM/yyyy" id="date-to" ng-model="dateTo" ng-change="dateToChanged()">
+    </div>
     <span>Райони:</span>
     <ul>
         <li ng-repeat="region in regions">

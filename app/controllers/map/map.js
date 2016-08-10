@@ -9,8 +9,16 @@ angular.module('myApp.map', ['ngRoute'])
   });
 }])
 
-.controller('MapCtrl', ['$scope', 'CrimesService', function($scope, CrimesService) {
+.controller('MapCtrl', ['$scope', 'CrimesService', 'MapService', function($scope, CrimesService, MapService) {
 
-  CrimesService.initMap();
+  MapService.initMap();
+
+  MapService.map.on('zoomend', function (e) {
+      CrimesService.loadCrimes();
+  });
+
+  MapService.map.on('moveend', function (e) {
+      CrimesService.loadCrimes();
+  });
 
 }]);
