@@ -1,7 +1,10 @@
 'use strict';
 
 angular.module('myApp.services')
-    .service("CrimesService", ['$http', 'ENV', 'MapService', function ($http, ENV, MapService) {
+    .service("CrimesService", ['$http', 'ENV', 'MapService', '$timeout', function ($http, ENV, MapService, $timeout) {
+        var $timer;
+        $timeout.cancel($timer);
+        $timer = $timeout(function () {
         var self = this;
 
         self.categoryIds = [];
@@ -26,6 +29,10 @@ angular.module('myApp.services')
         };
 
         self.loadCrimes = function () {
+            var $timer;
+
+            $timeout.cancel($timer);
+            $timer = $timeout(function () {
             var params = {
                 dateFrom: new Date(self.dateFrom).getTime(),
                 dateTo: new Date(self.dateTo).getTime()
@@ -55,6 +62,8 @@ angular.module('myApp.services')
             success(function (geoJSON, status, headers, config) {
                 MapService.renderMarkers(geoJSON);
             });
+        }, 500);
+
         };
 
     }]);
