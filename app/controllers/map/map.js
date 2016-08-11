@@ -19,7 +19,6 @@ angular.module('myApp.map', ['ngRoute'])
                 CrimesService.loadCrimes();
             }, 500);
         });
-
         MapService.map.on('moveend', function (e) {
             $timeout.cancel($timer);
             $timer = $timeout(function () {
