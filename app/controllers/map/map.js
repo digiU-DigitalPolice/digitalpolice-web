@@ -13,12 +13,4 @@ angular.module('myApp.map', ['ngRoute'])
 
   MapService.initMap();
 
-  MapService.map.on('zoomend', function (e) {
-      CrimesService.loadCrimes();
-  });
-
-  MapService.map.on('moveend', function (e) {
-      CrimesService.loadCrimes();
-  });
-
 }]);
