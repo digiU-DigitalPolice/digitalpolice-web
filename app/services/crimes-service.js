@@ -5,16 +5,11 @@ angular.module('myApp.services')
         var self = this;
 
         self.categoryIds = [];
-        self.regionIds = [];
         self.dateFrom = new Date("2014/01/01");
         self.dateTo = new Date("2017/01/01");
 
         self.setCategoryIds = function (categoryIds) {
             self.categoryIds = categoryIds;
-        };
-
-        self.setRegionIds = function (regionIds) {
-            self.regionIds = regionIds;
         };
 
         self.setDateFrom = function (dateFrom) {
@@ -35,17 +30,13 @@ angular.module('myApp.services')
             } else {
                 params.categories = [0];
             }
-            if (self.regionIds.length > 0) {
-                params.regions = self.regionIds;
-            }
 
             var bounds = MapService.map.getBounds();
 
             params['southWest.latitude'] = bounds._southWest.lat,
-                params['southWest.longitude'] = bounds._southWest.lng,
-                params['northEast.latitude'] = bounds._northEast.lat,
-                params['northEast.longitude'] = bounds._northEast.lng,
-                params['precision'] = MapService.map.getZoom() - 7;
+            params['southWest.longitude'] = bounds._southWest.lng,
+            params['northEast.latitude'] = bounds._northEast.lat,
+            params['northEast.longitude'] = bounds._northEast.lng,
 
             $http({
                 url: ENV.apiURL + '/crimes',

@@ -28,41 +28,7 @@ angular.module('myApp.services')
           }
       });
 
-      var markers = L.layerGroup();
-
-      for (var i = 0; i < geoJSON.features.length; ++i) {
-          var feature = geoJSON.features[i];
-
-          var c =  L.marker(new L.LatLng(feature.geometry.coordinates[1], feature.geometry.coordinates[0]),
-            {icon: iconCreateFunction(feature)});
-
-          c.on('click', function(e){
-              self.map.setView([e.latlng.lat, e.latlng.lng], self.map.getZoom() + 1);
-          });
-
-          markers.addLayer(c);
-      }
-
-      self.map.addLayer(markers);
-  };
-
-  var iconCreateFunction = function (feature) {
-      var childCount = feature.properties.count;
-
-      var c = ' marker-cluster-';
-      if (childCount < 10) {
-  	     c += 'small';
-  		} else if (childCount < 100) {
-  		    c += 'medium';
-  		} else {
-  		    c += 'large';
-  		}
-
-  		return new L.DivIcon({
-          html: '<div><span><b>' + childCount + '</b></span></div>',
-          className: 'marker-cluster' + c,
-          iconSize: new L.Point(40, 40)
-      });
+      L.geoJson(geoJSON).addTo(self.map);
   };
 
 }]);
