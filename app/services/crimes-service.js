@@ -1,10 +1,7 @@
 'use strict';
 
 angular.module('myApp.services')
-    .service("CrimesService", ['$http', 'ENV', 'MapService', '$timeout', function ($http, ENV, MapService, $timeout) {
-        var $timer;
-        $timeout.cancel($timer);
-        $timer = $timeout(function () {
+    .service("CrimesService", ['$http', 'ENV', 'MapService', function ($http, ENV, MapService) {
         var self = this;
 
         self.categoryIds = [];
@@ -24,10 +21,6 @@ angular.module('myApp.services')
         };
 
         self.loadCrimes = function () {
-            var $timer;
-
-            $timeout.cancel($timer);
-            $timer = $timeout(function () {
             var params = {
                 dateFrom: new Date(self.dateFrom).getTime(),
                 dateTo: new Date(self.dateTo).getTime()
@@ -41,20 +34,18 @@ angular.module('myApp.services')
             var bounds = MapService.map.getBounds();
 
             params['southWest.latitude'] = bounds._southWest.lat,
-            params['southWest.longitude'] = bounds._southWest.lng,
-            params['northEast.latitude'] = bounds._northEast.lat,
-            params['northEast.longitude'] = bounds._northEast.lng,
+                params['southWest.longitude'] = bounds._southWest.lng,
+                params['northEast.latitude'] = bounds._northEast.lat,
+                params['northEast.longitude'] = bounds._northEast.lng,
 
-            $http({
-                url: ENV.apiURL + '/crimes',
-                method: 'GET',
-                params: params
-            }).
-            success(function (geoJSON, status, headers, config) {
-                MapService.renderMarkers(geoJSON);
-            });
-        }, 500);
-
+                $http({
+                    url: ENV.apiURL + '/crimes',
+                    method: 'GET',
+                    params: params
+                }).
+                success(function (geoJSON, status, headers, config) {
+                    MapService.renderMarkers(geoJSON);
+                });
         };
 
     }]);
