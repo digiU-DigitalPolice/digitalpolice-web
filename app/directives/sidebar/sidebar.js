@@ -41,10 +41,9 @@ angular.module('myApp.directives', [])
                 if (newObj === oldObj) {
                   return;
                 }
-                var regionIds = filterOutSelectedRegionIds($scope.regions);
-                CrimesService.setRegionIds(regionIds);
 
-                CrimesService.loadCrimes();
+                // TODO: Render region layers from $scope.regions
+
             }, true);
 
             $scope.dateFromChanged = function () {
@@ -66,16 +65,6 @@ angular.module('myApp.directives', [])
                 for (var i = 0; i < categories.length; i++) {
                     if (categories[i].selected) {
                         result.push(categories[i].id);
-                    }
-                }
-                return result;
-            }
-
-            function filterOutSelectedRegionIds(regions) {
-                var result = [];
-                for (var i = 0; i < regions.length; i++) {
-                    if (regions[i].selected) {
-                        result.push(regions[i].koatuu);
                     }
                 }
                 return result;
