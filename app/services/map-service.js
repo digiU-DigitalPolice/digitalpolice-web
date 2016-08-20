@@ -27,37 +27,28 @@ angular.module('myApp.services')
                     self.map.removeLayer(layer);
                 }
             });
-            /*TODO render map(zoom)*/
-            var markers = L.markerClusterGroup();
+            var markers = L.markerClusterGroup({
+                zoomToBoundsOnClick:false,
+                animate:true,
+                animateAddingMarkers:true,
+                showCoverageOnHover:false});
+
             for (var i = 0; i < geoJSON.features.length; ++i) {
-                console.log(geoJSON.features.length);
                 var feature = geoJSON.features[i];
-                var c = L.marker(new L.LatLng(feature.geometry.coordinates[1], feature.geometry.coordinates[0],
-                    {icon: iconCreateFunction(feature)})
+                var c = L.marker(new L.LatLng(feature.geometry.coordinates[1], feature.geometry.coordinates[0])
                 );
                 markers.addLayer(c);
             }
             self.map.addLayer(markers);
-        };
-        var iconCreateFunction = function (feature) {
-            var childCount = feature.properties.count;
 
-            var c = ' marker-cluster-';
-            if (childCount < 10) {
-                c += 'small';
-            } else if (childCount < 100) {
-                c += 'medium';
-            } else {
-                c += 'large';
-            }
-
-            return new L.DivIcon({
-                html: '<div><span><b>' + childCount + '</b></span></div>',
-                className: 'marker-cluster' + c,
-                iconSize: new L.Point(40, 40)
+            markers.on('clusterclick', function (a) {
+                if (self.map.getZoom()<=15){
+                    a.layer.unspiderfied;
+                }else{
+                a.layer.spiderfy();
+                }
             });
+        };
 
-            //L.geoJson(geoJSON).addTo(self.map);
-        }
     }
     ]);

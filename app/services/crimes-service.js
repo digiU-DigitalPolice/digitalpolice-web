@@ -36,7 +36,7 @@ angular.module('myApp.services')
             params['southWest.latitude'] = bounds._southWest.lat,
                 params['southWest.longitude'] = bounds._southWest.lng,
                 params['northEast.latitude'] = bounds._northEast.lat,
-                params['northEast.longitude'] = bounds._northEast.lng,
+                params['northEast.longitude'] = bounds._northEast.lng;
 
                 $http({
                     url: ENV.apiURL + '/crimes',
