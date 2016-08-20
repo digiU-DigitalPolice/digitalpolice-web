@@ -28,7 +28,7 @@ angular.module('myApp.services')
                 }
             });
             var markers = L.markerClusterGroup({
-                zoomToBoundsOnClick:false,
+                zoomToBoundsOnClick:true,
                 animate:true,
                 animateAddingMarkers:true,
                 showCoverageOnHover:false});
