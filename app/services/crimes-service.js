@@ -34,18 +34,18 @@ angular.module('myApp.services')
             var bounds = MapService.map.getBounds();
 
             params['southWest.latitude'] = bounds._southWest.lat,
-            params['southWest.longitude'] = bounds._southWest.lng,
-            params['northEast.latitude'] = bounds._northEast.lat,
-            params['northEast.longitude'] = bounds._northEast.lng,
+                params['southWest.longitude'] = bounds._southWest.lng,
+                params['northEast.latitude'] = bounds._northEast.lat,
+                params['northEast.longitude'] = bounds._northEast.lng;
 
-            $http({
-                url: ENV.apiURL + '/crimes',
-                method: 'GET',
-                params: params
-            }).
-            success(function (geoJSON, status, headers, config) {
-                MapService.renderMarkers(geoJSON);
-            });
+                $http({
+                    url: ENV.apiURL + '/crimes',
+                    method: 'GET',
+                    params: params
+                }).
+                success(function (geoJSON, status, headers, config) {
+                    MapService.renderMarkers(geoJSON);
+                });
         };
 
     }]);
